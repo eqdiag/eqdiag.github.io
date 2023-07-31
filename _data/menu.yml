@@ -4,7 +4,7 @@
 
 
 entries:
-  - title: about me
+  - title: about me <img src="/assets/images/jump_wiz.gif" width = 25,height = 25>
     url: about 
   - title: <a href="mailto:daniel.j.engel@proton.me">contact</a>
 
