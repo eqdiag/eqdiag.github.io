@@ -3,6 +3,11 @@ layout: page
 title: Misc
 ---
 
-This is an tes page!
 
-It's very similar to a `post` layout, with the only difference that the publish date is not shown!
+Here are some more things I have writing snippets about:
+- music
+- scrabble
+- juggling
+- circuits
+- puzzles
+- inline skating

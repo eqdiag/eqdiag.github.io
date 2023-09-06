@@ -3,6 +3,11 @@ layout: page
 title: About
 ---
 
-This is an tes page!
+Hey there, I'm Daniel.
 
-It's very similar to a `post` layout, with the only difference that the publish date is not shown!
+I recently finished a PhD in theoretical computer science.
+My [research](writing) was at the intersection of game theory and distributed computing.
+
+I've also always had a passion for physics and computer graphics.
+You can find some my programming projects [here](projects).
+
