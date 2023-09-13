@@ -3,8 +3,6 @@ layout: post
 category: meta
 ---
 
-Hey there.
-So I finally decided to make a website, despite putting it off for way too long.
 
 My goal with this site is to do a couple of different things:
 
@@ -19,4 +17,4 @@ So, I'll try and create those resources here.
 I'd also like to treat this as a personal blog where I post about things happening in my life.
 This will include some of my hobbies :).
 
-I don't know how often I'll end up posting. I'd like to say at least weekly, but I think I just need to feel out what works for me.
+We'll see how often I end up posting :p.
