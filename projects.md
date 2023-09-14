@@ -23,6 +23,8 @@ title: Projects
  <a href="https://github.com/eqdiag/shaderFx">shaderFx</a> |
  <a href="https://github.com/eqdiag/rayTraceWeekend">rayTraceWeekend</a> | 
  <a href="https://github.com/eqdiag/oneTri">oneTri</a> | 
+<a href="https://github.com/eqdiag/myScotty3d/blob/main/README_A3.md">pTrace</a> | 
+
 
 
 
