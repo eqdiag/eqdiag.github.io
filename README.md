@@ -1,5 +1,5 @@
 Not much to see here.
-Just a place for hosting my [personal page](eqdiag.github.io).
+Just a place for hosting my [personal page](https://eqdiag.github.io/).
 
 Using a jekyll template forked from [riggraz' no style](https://github.com/riggraz/no-style-please).
 
