@@ -19,7 +19,7 @@ title: Projects
  <a href="https://github.com/eqdiag/sceneView">sceneView</a>   |
  <a href="https://github.com/eqdiag/curveEdit">curveEdit</a>   | 
  <a href="https://github.com/eqdiag/hybridTrace">hybridTrace</a> |
- |<a href="https://github.com/eqdiag/springSim">springSim</a> | 
+ <a href="https://github.com/eqdiag/springSim">springSim</a> | 
  <a href="https://github.com/eqdiag/shaderFx">shaderFx</a> |
  <a href="https://github.com/eqdiag/rayTraceWeekend">rayTraceWeekend</a> | 
  <a href="https://github.com/eqdiag/oneTri">oneTri</a> | 
