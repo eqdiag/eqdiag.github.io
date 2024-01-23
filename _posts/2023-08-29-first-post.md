@@ -1,6 +1,7 @@
 ---
 layout: post
 category: meta
+usemathjax: true
 ---
 
 
@@ -18,3 +19,5 @@ I'd also like to treat this as a personal blog where I post about things happeni
 This will include some of my hobbies :).
 
 We'll see how often I end up posting :p.
+
+MathJax TEST: $$E=mc^2$$

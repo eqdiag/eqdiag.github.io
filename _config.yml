@@ -7,6 +7,9 @@ baseurl: "" # subpath of the site, e.g. "/blog" (leave it blank "" if you're sit
 description:  
 #Personal page # description of the site (multiple lines allowed)
 
+# Build settings
+markdown: kramdown
+
 permalink: /:slug.html
 #  <img src="/assets/images/jump_wiz.gif" width = 25,height = 25>
 

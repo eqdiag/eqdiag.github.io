@@ -26,6 +26,8 @@ title: Projects
 <a href="https://github.com/eqdiag/myScotty3d/blob/main/README_A3.md">pTrace</a> | 
 <a href="https://github.com/eqdiag/hitomezashi">hitomezashi</a> |
 <a href="https://github.com/eqdiag/myScotty3d/blob/main/README_A2.md">meshEdit</a> | 
+<a href="https://github.com/eqdiag/lightBx">lightBx</a>
+
 
 
 
