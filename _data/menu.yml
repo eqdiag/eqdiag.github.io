@@ -20,12 +20,12 @@ entries:
   - title: resume
     url: https://drive.google.com/file/d/1y5PUVuYRsjU223XgvYZN0HAg35TJFkpx/view?usp=share_link
 
-#  - title: recent posts
-#    post_list:
-#      limit: 2
-#      show_more: false
-#      show_more_text: See archive...
-#      show_more_url: archive.html
+  #- title: recent posts
+  #  post_list:
+  #    limit: 3
+  #    show_more: false
+  #    show_more_text: See archive...
+  #    show_more_url: archive.html
 
 
 #entries:

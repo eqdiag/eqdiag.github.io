@@ -4,6 +4,9 @@ category: notes
 usemathjax: true
 ---
 
+{%- include mathjax.html -%}
+
+
 I've been writing graphics programs in vulkan more recently.
 I wrote most of my [math code](https://github.com/eqdiag/gMath) for vector and matrix operations with the OpenGL
 coordinate system in mind.

@@ -51,13 +51,22 @@ li { margin: 0.4rem 0; }
   padding: 4rem 2rem;
 }
 
+hr.prj_sep{
+  text-align: right;
+  border: 0;
+  border-top: dotted 2px;
+  &:before { content: '' }
+  &:after { content: attr(data-content) '' }
+}
+
 hr {
   text-align: center;
   border: 0;
-
+  color: black;
   &:before { content: '/////' }
   &:after { content: attr(data-content) '/////' }
 }
+
 
 table { 
   //width: 100%; 
@@ -70,7 +79,7 @@ th, td {
   //border-collapse: collapse;
   border: 1px solid black;
   border-radius: 10px;
-  padding: 15px;
+  padding: 15px;  
   
 }
 
@@ -94,11 +103,14 @@ blockquote {
   p { margin: 0; }
 }
 
+
 img {
   max-width: 100%;
+  text-align: center;
   display: inline-block;
   margin: 0 auto;
 }
+
 
 a{
   color: rgb(139, 27, 27);

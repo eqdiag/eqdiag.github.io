@@ -3,11 +3,15 @@ layout: page
 title: Writing
 ---
 
+
+
 ---
 {: data-content="Snippets"}
 
 
 *<a href="https://drive.google.com/file/d/1u4Qdb_a4eVOX07gMIqUTtN6ibAmuJGj2/view?usp=share_link"> Notes on the Riemann Mapping Theorem </a>*
+
+*<a href="../a-careful-look-at-projection-matrices"> A Careful Look at Projection Matrices </a>*
 
 ---
 {: data-content="Papers"}
@@ -15,7 +19,7 @@ title: Writing
 *<a href="https://repository.library.brown.edu/studio/item/bdr:f4dafjdd/"> Dissertation: Trading Mechanisms in an Adversarial Economy </a>*
 <br> Daniel Engel
 
-*A Consensus Hierarchy for Cross-Chain Synchronization*
+*A Consensus Lattice for Cross-Chain Coordination*
 <br> Daniel Engel, Sucharita Jayanti, Maurice Herlihy
 <br> *In Submission*
 

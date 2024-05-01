@@ -4,6 +4,8 @@ category: meta
 usemathjax: true
 ---
 
+{%- include mathjax.html -%}
+
 
 My goal with this site is to do a couple of different things:
 
