@@ -13,7 +13,7 @@ title: Some Projects
 <br>
 <img src="assets/images/dmalloc.png" alt="dmalloc image"> 
 <div>
-A dynamic memory allocator that helps to debug common dynamic memory usage errors (e.g. error after free, write out of bounds, etc).
+A user-level dynamic memory allocator that helps to debug common dynamic memory usage errors (e.g. error after free, write out of bounds, etc).
 </div>
 
 <hr class="prj_sep" />
@@ -27,7 +27,7 @@ A dynamic memory allocator that helps to debug common dynamic memory usage error
 <br>
 <img src="assets/images/fileio.png" alt="lightfx image"> 
 <div>
-A library that provides a wrapper around a few POSIX compliant sys calls.
+A user-level library that provides a wrapper around a few POSIX compliant sys calls.
 The implementation uses a cache to speed up access to data and reduce the number of disk operations required for common syscalls like read, write, and seek.
 
 </div>
