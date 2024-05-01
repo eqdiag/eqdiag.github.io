@@ -51,6 +51,15 @@ li { margin: 0.4rem 0; }
   padding: 4rem 2rem;
 }
 
+hr.sec_sep{
+  text-align: right;
+  border: 0;
+  color: black;
+  border-top: dotted 2px;
+  &:before { content: '' }
+  &:after { content: attr(data-content) '' }
+}
+
 hr.prj_sep{
   text-align: right;
   border: 0;
@@ -110,7 +119,7 @@ img {
   max-height: 100%;
   text-align: center;
   display: inline-block;
-  margin: 0 auto;
+  margin: auto;
 }
 
 

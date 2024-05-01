@@ -22,11 +22,12 @@ I'll include the orthographic and perspective transformations in what follows.
 
 Here I'll be assuming a camera where after the view transformation, the positive y-axis is up,the positive x-axis is right, and the positive z-axis is towards the viewer.
 
-TODO: Figure
+<img src="assets/images/standard_coords.png" alt="standard coordinates image"> 
 
+<hr class="sec_sep" />
 ## OpenGL coordinate system
 
-TODO: Figure
+<img src="assets/images/gl_coords.png" alt="standard coordinates image" style="display:block"> 
 
 Let $$T_{GL}$$ be the transformation from the camera-local space to the OpenGL clip-space.
 
@@ -37,9 +38,11 @@ So $$ T_{GL} =\begin{bmatrix}
     0 & 0 & 0 & 1\\ 
 \end{bmatrix}$$
 
+<hr class="sec_sep" />
+
 ## Vulkan coordinate system
 
-TODO: Figure
+<img src="assets/images/vk_coords.png" alt="standard coordinates image" style="display:block"> 
 
 Let $$T_{VK}$$ be the transformation from the camera-local space to the Vulkan clip-space.
 
@@ -51,6 +54,8 @@ So $$ T_{VK} =\begin{bmatrix}
 \end{bmatrix}$$
 
 Through the following, I'm going to use $$\textbf{p} = (x,y,z,1)$$ to refer to the old position (camera-local space) and $$\textbf{p}' = (x',y',z',w')$$ to refer to the new position (clip-space) .
+
+<hr class="sec_sep" />
 
 ## Orthographic Projection
 
@@ -86,6 +91,7 @@ The orthographic projection matrix is $$ P_{ortho,GL} = \begin{bmatrix}
     0 & 0 & \frac{-2}{f - n} & -\frac{n+f}{f-n} \\ 
     0 & 0 & 0 & 1 \end{bmatrix}
     $$
+
 
 *Now, Vulkan*
 
@@ -123,6 +129,7 @@ Putting this into a matrix gives $$ P_{ortho,VK} = \begin{bmatrix}
 \end{bmatrix}
     $$
 
+<hr class="sec_sep" />
 
 ## Perspective projection
 
@@ -134,7 +141,6 @@ and Vulkan.
 
 We want to map the viewing frustrum to a cube with extents $$[l,r] \times [b,t] \times [n,f]$$
 
-TODO: Figure
 
 
 In each case we have $$x' = \frac{n x}{z}, y' = \frac{n y}{z}$$.
@@ -213,6 +219,8 @@ $$ P_{persp,VK} = \begin{bmatrix}
     0 & 0 & -1 & 0\\ 
 \end{bmatrix}
 $$
+
+<hr class="sec_sep" />
 
 ## Summary
 
