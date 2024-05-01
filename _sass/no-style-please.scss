@@ -54,6 +54,7 @@ li { margin: 0.4rem 0; }
 hr.prj_sep{
   text-align: right;
   border: 0;
+  color: black;
   border-top: dotted 2px;
   &:before { content: '' }
   &:after { content: attr(data-content) '' }
