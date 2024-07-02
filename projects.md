@@ -69,13 +69,16 @@ First vulkan project, where I was experimenting with instanced objects and light
 
 
 <hr class="prj_sep" />
+<div id = "spring_sim_div">
+</div>
 ## springsim [<img src="assets/images/github.png" alt="radiance image" width="20" height="20"> ](https://github.com/eqdiag/springsim)
+
 
 #### [C/C++,OpenGL,Graphics]
 
 <br>
 <img src="assets/images/spring_sim.gif" alt="springsim image" > 
-<div id="spring_sim_div">
+<div>
 An implementation of a soft-body simulator based on a spring-based physical model.
 </div>
 
@@ -91,13 +94,15 @@ Simple application for viewing 3d meshes lit with the phong shading model.
 </div>
 
 <hr class="prj_sep" />
+<div id = "curve_edit_div">
+</div>
 ## curveedit [<img src="assets/images/github.png" alt="radiance image" width="20" height="20"> ](https://github.com/eqdiag/curveEdit)
 
 #### [C/C++,OpenGL,Graphics]
 
 <br>
 <img src="assets/images/curve_edit.gif" alt="curveedit image"> 
-<div id="curve_edit_div">
+<div>
 Application for editing and visualizing common curve representations.
 Includes things like Bezier curves, Bsplines, and Subdivision curves.
 </div>
@@ -164,13 +169,15 @@ patterns.
 </div>
 
 <hr class="prj_sep" />
+<div id = "mesh_edit_div">
+</div>
 ## meshedit [<img src="assets/images/github.png" alt="radiance image" width="20" height="20"> ](https://github.com/eqdiag/myScotty3d/blob/main/README_A2.md)
 
 #### [C/C++,OpenGL,Graphics]
 
 <br>
 <img src="assets/images/mesh_edit.gif" alt="mesh edit image" > 
-<div id="mesh_edit_div">
+<div>
 A 3D model editing program with an implementation of the half-edge data structure.
 </div>
 
