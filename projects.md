@@ -75,7 +75,7 @@ First vulkan project, where I was experimenting with instanced objects and light
 
 <br>
 <img src="assets/images/spring_sim.gif" alt="springsim image" > 
-<div>
+<div id="spring_sim_div">
 An implementation of a soft-body simulator based on a spring-based physical model.
 </div>
 
