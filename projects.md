@@ -97,7 +97,7 @@ Simple application for viewing 3d meshes lit with the phong shading model.
 
 <br>
 <img src="assets/images/curve_edit.gif" alt="curveedit image"> 
-<div>
+<div id="curve_edit_div">
 Application for editing and visualizing common curve representations.
 Includes things like Bezier curves, Bsplines, and Subdivision curves.
 </div>
@@ -170,7 +170,7 @@ patterns.
 
 <br>
 <img src="assets/images/mesh_edit.gif" alt="mesh edit image" > 
-<div>
+<div id="mesh_edit_div">
 A 3D model editing program with an implementation of the half-edge data structure.
 </div>
 
