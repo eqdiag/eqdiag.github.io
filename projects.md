@@ -57,9 +57,12 @@ A game I made recently for a game jam to learn Unity and to experiment with Unit
 </div>
 
 <hr class="prj_sep" />
-## lightbx [<img src="assets/images/github.png" alt="radiance image" width="20" height="20"> ](https://github.com/eqdiag/lightBx)
+<div id = "lightbx_div">
+</div>
 
+## lightbx [<img src="assets/images/github.png" alt="radiance image" width="20" height="20"> ](https://github.com/eqdiag/lightBx)
 #### [C/C++,Vulkan,Graphics]
+
 
 <br>
 <img src="assets/images/lightBx.gif" alt="lightbx image" > 
@@ -142,6 +145,10 @@ Includes things like vertex warping and post-processing effects.
 </div>
 
 <hr class="prj_sep" />
+<div id = "radiance_div">
+</div>
+
+
 ## radiance [<img src="assets/images/github.png" alt="radiance image" width="20" height="20"> ](https://github.com/eqdiag/radiance/tree/main)
 
 #### [C/C++,Graphics]
