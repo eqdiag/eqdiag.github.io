@@ -62,7 +62,7 @@ A virtual-memory system implementation for a toy operating system. On top of the
 
 <img src="assets/images/subsurface.gif" alt="subsurface splash image" > 
 <div>
-A game I made recently for a game jam to learn Unity and to experiment with Unity's shader graph system.
+A game I made recently for a game jam to experiment with Unity's shader graph system.
 </div>
 
 <hr class="prj_sep" />
