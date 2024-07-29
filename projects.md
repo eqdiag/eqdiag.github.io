@@ -6,6 +6,8 @@ title: Some Projects
 ### Tags: C,C/C++,Rust,Systems,Graphics,OpenGL,Vulkan,Unity
 
 <hr class="prj_sep" />
+<div id = "dmalloc_div">
+</div>
 
 ## dmalloc [<img src="assets/images/github.png" alt="radiance image" width="20" height="20"> ](https://github.com/eqdiag/brownCS1310/tree/main/cs300-s23-projects/dmalloc) 
 #### [C,Systems]
@@ -17,7 +19,8 @@ A user-level dynamic memory allocator that helps to debug common dynamic memory 
 </div>
 
 <hr class="prj_sep" />
-
+<div id = "bytebuf_div">
+</div>
 
 ## bytebuf [<img src="assets/images/github.png" alt="radiance image" width="20" height="20"> ](https://github.com/eqdiag/brownCS1310/tree/main/cs300-s23-projects/fileio)
 
@@ -34,6 +37,9 @@ The implementation uses a cache to speed up access to data and reduce the number
 
 
 <hr class="prj_sep" />
+<div id = "vmem_div">
+</div>
+
 ## vmem [<img src="assets/images/github.png" alt="radiance image" width="20" height="20"> ](https://github.com/eqdiag/brownCS1310/tree/main/cs300-s23-projects/weensyos)
 
 #### [C,Systems]
