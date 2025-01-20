@@ -2,9 +2,8 @@
 # https://github.com/riggraz/no-style-please#customize-the-menu
 
 entries:
-  - title: about me 
-    url: about 
-  - title: <a href="mailto:daniel.j.engel@proton.me">contact</a>
+  #- title: about me 
+  #  url: about 
 #  - title: things i like 
 #    entries:
 #      - title: math & physics 
@@ -13,12 +12,15 @@ entries:
 #      - title: some more
 #        url: rec
 #      - title: inline skating
+
   - title: projects
     url: projects
   - title: writing
     url: writing
   - title: resume
-    url: https://drive.google.com/file/d/18IkAJ9lBFTIWgGxQVRt4TrDNb8XUllHB/view?usp=sharing
+    url: https://drive.google.com/file/d/1AU8qbV412IB8qywmv4EFfoHVIjOcsZdx/view?usp=drive_link
+  - title: <a href="mailto:daniel.j.engel@proton.me">contact</a>
+
 
   #- title: recent posts
   #  post_list:

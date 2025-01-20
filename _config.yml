@@ -1,10 +1,10 @@
-title:  daniel's page 
+title:  daniel's page
   # name of the site
 author: Daniel Engel # name of site's author
 email: daniel.j.engel@proton.me # email of site's author
 url: eqdiag.github.io # root address of the site
 baseurl: "" # subpath of the site, e.g. "/blog" (leave it blank "" if you're site shouldn't use a subpath)
-description:  
+description:  <center><img src="/assets/images/jump_wiz.gif" width = 25,height = 25><h2></h2><p>Welcome to my website! Thanks for stopping by. </p> <p>I am a software engineer focused on gpu programming and low-level details of graphics systems. I enjoy implementing new rendering and simulation algorithms as well as optimizing their performance for target hardware.</p> <p> Offline, I also really enjoy making music, playing board games, and rollerblading through the city.</p></center>
 #Personal page # description of the site (multiple lines allowed)
 
 # Build settings
@@ -22,7 +22,7 @@ theme_config:
   appearance: "light" # can be "light", "dark" or "auto"
   back_home_text: ".." # customize text for homepage link in post layout
   date_format: "%Y-%m-%d" # customize how date is formatted
-  show_description: false # show blog description in home page
+  show_description: true # show blog description in home page
 
 sass:
   style: :compressed
