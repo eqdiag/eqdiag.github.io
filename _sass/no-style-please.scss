@@ -19,7 +19,7 @@
 // bg color is also needed in html in order to
 // block body's background propagation
 // see: https://stackoverflow.com/a/61265706
-html, body { background: rgb(123, 123, 192); }
+html, body { background: rgb(170, 170, 213); }
 
 html { height: 100%; }
 
@@ -110,7 +110,7 @@ div.highlighter-rouge code {
 .nav_button{
   display: inline-block;
   padding: 4rem;
-  border: 1px solid black;
+  border: 2px solid rgb(88, 43, 161);
   border-radius: 10px;
   padding-left: 30px;  
   padding-right: 30px;  
