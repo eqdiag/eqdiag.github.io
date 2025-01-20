@@ -117,14 +117,26 @@ div.highlighter-rouge code {
   padding-top: 10px;
   padding-bottom: 10px;
   margin: 5px;
-  display: inline-block;
-  text-align: center;
+  //display: inline-block;
+  //text-align: center;
 }
 
 #nav_bar{
-  display: inline-block;
+  //display: inline-block;
   text-align: center;
+  //margin: auto;  
+  margin: auto; 
 }
+
+@media only screen and (max-width: 500px) {
+  #nav_bar{
+    //display: inline-block;
+    //text-align: center;
+    //margin: auto;  
+    margin: auto; 
+  }
+}
+
 
 blockquote {
   font-style: italic;

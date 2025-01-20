@@ -1,4 +1,4 @@
-<ul>
+<div id="nav_bar">
   {%-for item in include.collection-%}
     <div class = "nav_button">
     {%- if item.url -%}
@@ -23,4 +23,4 @@
       {%-include menu_item.html collection=item.entries-%}
     {%-endif-%}
   {%-endfor-%}
-</ul>
+      </div>

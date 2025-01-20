@@ -4,7 +4,7 @@ author: Daniel Engel # name of site's author
 email: daniel.j.engel@proton.me # email of site's author
 url: eqdiag.github.io # root address of the site
 baseurl: "" # subpath of the site, e.g. "/blog" (leave it blank "" if you're site shouldn't use a subpath)
-description:  <center><img src="/assets/images/jump_wiz.gif" width = 25,height = 25><h2></h2><p>Welcome to my website! Thanks for stopping by. </p> <p>I am a software engineer focused on gpu programming and low-level details of graphics systems. I enjoy implementing new rendering and simulation algorithms as well as optimizing their performance for target hardware.</p> <p> Offline, I also really enjoy making music, playing board games, and rollerblading through the city.</p></center>
+description:  <center><img src="/assets/images/jump_wiz.gif" width = 25,height = 25><h2></h2><p>Welcome to my website! Thanks for stopping by. </p> <p>I am a software engineer focused on gpu programming and low-level details of graphics systems. I enjoy implementing new rendering and simulation algorithms as well as optimizing their performance for target hardware.</p> <p> Offline, I make music, play board games, and rollerblade through the city.</p></center>
 #Personal page # description of the site (multiple lines allowed)
 
 # Build settings
