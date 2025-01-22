@@ -3,7 +3,7 @@ layout: page
 title: Secrets
 ---
 
-*** Well well well... what is this? ***
+<center>well well well ... what.do.we.have.here? </center>
 
 ---
 {: data-content="Music"}
