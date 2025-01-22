@@ -3,7 +3,7 @@ layout: page
 title: Secrets
 ---
 
-*** Many things here in progress and subject to change ***
+*** Well well well... what is this? ***
 
 ---
 {: data-content="Music"}
