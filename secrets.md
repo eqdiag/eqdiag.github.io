@@ -3,7 +3,15 @@ layout: page
 title: Secrets
 ---
 
-<center>well well well ... what.do.we.have.here? </center>
+<center>if you've managed to get here, you've found my "in progress" staging area for the site</center>
+
+
+---
+{: data-content="Notes (half-baked)"}
+
+
+
+<center><a href="./fourier-and-his-friends-root"> Fourier and his friends </a></center>
 
 ---
 {: data-content="Music"}
