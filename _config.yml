@@ -4,7 +4,7 @@ author: Daniel Engel # name of site's author
 email: daniel.j.engel@proton.me # email of site's author
 url: eqdiag.github.io # root address of the site
 baseurl: "" # subpath of the site, e.g. "/blog" (leave it blank "" if you're site shouldn't use a subpath)
-description:  <center><img src="/assets/images/jump_wiz.gif" width = 25,height = 25><h2></h2><p>Hey thanks for stopping by, I'm Daniel. </p> <p>I'm a software engineer with skills in scientific computing, computer graphics, and real-time audio. I really enjoy the low-level details common in systems programming. </p> <p>Currently, I'm working as an audio programmer at <a href="https://www.modulate.ai/">modulate</a>.</p></center>
+description:  <center><img src="/assets/images/jump_wiz.gif" width = 25,height = 25><h2></h2><p>Hey thanks for stopping by, I'm Daniel. </p> <p> I have a background in scientific computing, real-time audio, and computer graphics. I really enjoy the low-level details common in systems programming. </p> <p>Currently, I'm working as an audio programmer at <a href="https://www.modulate.ai/">modulate</a>.</p></center>
 #Personal page # description of the site (multiple lines allowed)
 
 # Build settings
