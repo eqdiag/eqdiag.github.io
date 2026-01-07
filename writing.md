@@ -33,7 +33,7 @@ title: Writing
 <br> Daniel Engel, Maurice Herlihy, Yingjie Xue
 <br> *SSS 2021*
 
-*<a href="https://arxiv.org/abs/2110.09872"> presentation and publication: loss and slippage in networks of automated market Makers </a>*
+*<a href="https://arxiv.org/abs/2110.09872"> presentation and publication: loss and slippage in networks of automated market makers </a>*
 <br> Daniel Engel, Maurice Herlihy 
 <br> *Tokenomics 2021*
 

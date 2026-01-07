@@ -7,11 +7,21 @@ title: Secrets
 
 
 ---
+{: data-content="Sketches (half-baked)"}
+
+<center><a href="./raw/first_date.html">our bitsy baby</a></center>
+
+---
 {: data-content="Notes (half-baked)"}
 
 
 
 <center><a href="./fourier-and-his-friends-root"> Fourier and his friends </a></center>
+
+<center><a href="./notes-on-complex-analysis-root"> Notes on Complex Analysis </a></center>
+
+<center><a href="./notes-on-mechanics-root"> Notes on Mechanics </a></center>
+
 
 ---
 {: data-content="Music"}
