@@ -18,6 +18,9 @@ title: Secrets
 
 <center><a href="./fourier-and-his-friends-root"> Fourier and his friends </a></center>
 
+<center><a href="./rendering-theory-root">Rendering Theory</a></center>
+
+
 <center><a href="./notes-on-complex-analysis-root"> Notes on Complex Analysis </a></center>
 
 <center><a href="./notes-on-mechanics-root"> Notes on Mechanics </a></center>
@@ -31,3 +34,9 @@ title: Secrets
 <center><a href="https://drive.google.com/file/d/1u7ZGbutFmRe5TbTAuGfBsYJBYzrglQTw/view?usp=drive_link"> dark_c_minor_idea </a></center>
 
 <center><a href="https://drive.google.com/file/d/1my0YcqacNKYAjAu4q7Az17cBFZdHv9lW/view?usp=drive_link"> Beside The Orrery of the Old Astrologer </a></center>
+
+---
+{: data-content="Dreams"}
+
+<center><a href="./mesh-network-dream">mesh networks</a></center>
+
