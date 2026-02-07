@@ -12,6 +12,17 @@ title: Secrets
 <center><a href="./raw/first_date.html">our bitsy baby</a></center>
 
 ---
+{: data-content="Snippets"}
+
+<center><a href="./cramers-rule">cramer's rule</a></center>
+
+<center><a href="./geometric-product">geometric product</a></center>
+
+<center><a href="./hand-of-darkness">hand of darkness</a></center>
+
+
+
+---
 {: data-content="Notes (half-baked)"}
 
 
