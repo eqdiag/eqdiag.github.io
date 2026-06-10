@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>First Date</title>
+  <link rel="shortcut icon" href="/logo.png">
+  <link rel="stylesheet" href="/style.css">
+  <script type="text/javascript" async
+    src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+    MathJax.Hub.Config({
+      tex2jax: {
+        inlineMath: [['$','$'], ['\\(','\\)']],
+        processEscapes: true
+      }
+    });
+  </script>
+</head>
+<body a="light">
+  <main class="page-content">
+    <div class="w">
+      <a href="/">..</a><article>
+  <p class="post-meta">
+    <time datetime="2026-01-06 00:00:00 -0500">2026-01-06</time>
+  </p>
+  
+  <h1>First Date</h1>
+
+  
+<h3 id="sinuosids-and-exponentials">Sinuosids and Exponentials</h3>
+
+<p>Fourier’s big idea was to recognize that you can use sinuisoids as building blocks to construct general periodic signals.
+A <em>sinuisoid</em> here is just some function of the form</p>
+
+\[sin(\omega t + \phi)\]
+
+<p>where $\omega, \phi \in \mathbb{R}$ can freely vary.</p>
+
+<p>Cosines can be expressed as phase-shifted sines, and linear combinations of sines can be expressed as <em>exponentials</em> via</p>
+
+\[e^{i \omega t} = cos(\omega t) + i sin(\omega t)\]
+
+<p>It turns out to be a bit nicer to work with exponentials, so we’ll just stick with those since as just shown, we don’t lose any expressibility.</p>
+
+<h3 id="fourier-series-just-try-your-best">Fourier Series (Just try your best)</h3>
+
+<p>Put yourself in the mind of Fourier for a sec. He probably was thinking something along the lines of</p>
+
+<center><em>i bet a function that repeats is just a ton of scaled sine waves added together</em></center>
+
+<p>How could we formalize this?</p>
+
+<p>Well, a signal $x: \mathbb{R} \to \mathbb{R}$ that repeats is typically called <em>periodic</em>, and it just means there’s some number $T \in \mathbb{R}$ where $x(t) = x(t + T)$ for any $t \in \mathbb{R}$.</p>
+
+<p>So basically, there’s at least one number where once you go past it, the signals just starts over again.
+Typically, the smallest such positive value is called the <em>fundamental period</em>.</p>
+
+
+</article>
+    </div>
+  </main>
+</body>
+</html>

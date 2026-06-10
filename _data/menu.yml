@@ -13,12 +13,20 @@ entries:
 #        url: rec
 #      - title: inline skating
 
+  - title: blog
+    url: blog
+    post_list:
+      category: blog
+      limit: 5
+      show_more: true
+      show_more_text: see all...
+      show_more_url: blog.html
+  - title: notes
+    url: notes
   - title: projects
     url: projects
-  - title: writing
-    url: writing
   - title: resume
-    url: https://drive.google.com/file/d/1jbh6cX3JaMtt3CVKzP40anWOlPqQPVU-/view?usp=sharing
+    url: https://drive.google.com/file/d/1mzJvSQ_VvPDVdphojTXdVT67COQOBjAK/view?usp=sharing
   - title: <a href="mailto:daniel.j.engel@proton.me">contact</a>
 
 

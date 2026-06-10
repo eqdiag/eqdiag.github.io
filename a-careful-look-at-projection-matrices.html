@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>A Careful Look At Projection Matrices</title>
+  <link rel="shortcut icon" href="/logo.png">
+  <link rel="stylesheet" href="/style.css">
+  <script type="text/javascript" async
+    src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+    MathJax.Hub.Config({
+      tex2jax: {
+        inlineMath: [['$','$'], ['\\(','\\)']],
+        processEscapes: true
+      }
+    });
+  </script>
+</head>
+<body a="light">
+  <main class="page-content">
+    <div class="w">
+      <a href="/">..</a><article>
+  <p class="post-meta">
+    <time datetime="2024-02-13 00:00:00 -0500">2024-02-13</time>
+  </p>
+  
+  <h1>A Careful Look At Projection Matrices</h1>
+
+  
+<p>I’ve been writing graphics programs in vulkan more recently.
+I wrote most of my <a href="https://github.com/eqdiag/gMath">math code</a> for vector and matrix operations with the OpenGL
+coordinate system in mind.</p>
+
+<p>I find myself re-deriving these matrices every time I switch APIs to understand <em>exactly</em> what’s going on.</p>
+
+<p>So, I decided to make a reference where I derive and spell out precisely the difference between projection transformations in OpenGL and Vulkan.
+I’ll include the orthographic and perspective transformations in what follows.</p>
+
+<p><a href="https://github.com/eqdiag/lightBx/blob/main/src/math/matrix.cpp">These functions</a> directly mirror the derivations shown below.</p>
+
+<h2 id="camera-coordinate-system">Camera coordinate system</h2>
+
+<p>Here I’ll be assuming a camera where after the view transformation, the positive y-axis is up,the positive x-axis is right, and the positive z-axis is towards the viewer.</p>
+
+<p><img src="assets/images/standard_coords.png" alt="standard coordinates image" /></p>
+
+<hr class="sec_sep" />
+
+<h2 id="opengl-coordinate-system">OpenGL coordinate system</h2>
+
+<p><img src="assets/images/gl_coords.png" alt="standard coordinates image" style="display:block" /></p>
+
+<p>Let \(T_{GL}\) be the transformation from the camera-local space to the OpenGL clip-space.</p>
+
+<p>So \(T_{GL} =\begin{bmatrix}
+    1 &amp; 0 &amp; 0 &amp; 0\\ 
+    0 &amp; 1 &amp; 0 &amp; 0\\ 
+    0 &amp; 0 &amp; -1 &amp; 0\\ 
+    0 &amp; 0 &amp; 0 &amp; 1\\ 
+\end{bmatrix}\)</p>
+
+<hr class="sec_sep" />
+
+<h2 id="vulkan-coordinate-system">Vulkan coordinate system</h2>
+
+<p><img src="assets/images/vk_coords.png" alt="standard coordinates image" style="display:block" /></p>
+
+<p>Let \(T_{VK}\) be the transformation from the camera-local space to the Vulkan clip-space.</p>
+
+<p>So \(T_{VK} =\begin{bmatrix}
+    1 &amp; 0 &amp; 0 &amp; 0\\ 
+    0 &amp; -1 &amp; 0 &amp; 0\\ 
+    0 &amp; 0 &amp; -1 &amp; 0\\ 
+    0 &amp; 0 &amp; 0 &amp; 1\\ 
+\end{bmatrix}\)</p>
+
+<p>Through the following, I’m going to use \(\textbf{p} = (x,y,z,1)\) to refer to the old position (camera-local space) and \(\textbf{p}' = (x',y',z',w')\) to refer to the new position (clip-space) .</p>
+
+<hr class="sec_sep" />
+
+<h2 id="orthographic-projection">Orthographic Projection</h2>
+
+<p><em>Let’s start with OpenGL</em></p>
+
+<p>We want to map \([l,r] \times [b,t] \times [n,f]  \to [-1,1]^3\).</p>
+
+<p>This does the job: \(x' = 2(\frac{x - l}{r - l}) - 1 = (\frac{2}{r-l})x - (\frac{r+l}{r-l})\).
+The y-axis and z-axis are derived in the same way.</p>
+
+<p>The orthographic projection matrix is \(P_{ortho,GL} = \begin{bmatrix}
+    \frac{2}{r - l} &amp; 0 &amp; 0 &amp; -\frac{r+l}{r-l} \\ 
+    0 &amp; \frac{2}{t - b} &amp; 0 &amp; -\frac{t+b}{t-b} \\ 
+    0 &amp; 0 &amp; \frac{2}{f - n} &amp; -\frac{n+f}{f-n} \\ 
+    0 &amp; 0 &amp; 0 &amp; 1\\ 
+\end{bmatrix} * T_{GL} = \begin{bmatrix}
+    \frac{2}{r - l} &amp; 0 &amp; 0 &amp; -\frac{r+l}{r-l} \\ 
+    0 &amp; \frac{2}{t - b} &amp; 0 &amp; -\frac{t+b}{t-b} \\ 
+    0 &amp; 0 &amp; \frac{2}{f - n} &amp; -\frac{n+f}{f-n} \\ 
+    0 &amp; 0 &amp; 0 &amp; 1 \end{bmatrix} * 
+    \begin{bmatrix}
+    1 &amp; 0 &amp; 0 &amp; 0\\ 
+    0 &amp; 1 &amp; 0 &amp; 0\\ 
+    0 &amp; 0 &amp; -1 &amp; 0\\ 
+    0 &amp; 0 &amp; 0 &amp; 1\\ 
+    \end{bmatrix}
+    \\ 
+    = \begin{bmatrix}
+    \frac{2}{r - l} &amp; 0 &amp; 0 &amp; -\frac{r+l}{r-l} \\ 
+    0 &amp; \frac{2}{t - b} &amp; 0 &amp; -\frac{t+b}{t-b} \\ 
+    0 &amp; 0 &amp; \frac{-2}{f - n} &amp; -\frac{n+f}{f-n} \\ 
+    0 &amp; 0 &amp; 0 &amp; 1 \end{bmatrix}\)</p>
+
+<p><em>Now, Vulkan</em></p>
+
+<p>We want to map \([l,r] \times [b,t] \times [n,f]  \to [-1,1] \times [1,-1] \times [0,1]\).</p>
+
+<p>The x-axis is the same as in OpenGL.
+The y-axis is swapped, so \(y' = -2(\frac{y - b}{t - b}) + 1 = (\frac{-2}{t-b})y + (\frac{t+b}{t-b})\).</p>
+
+<p>As for the z-axis, we get \(z' = \frac{z - n}{f - n} = \frac{z}{f - n} - \frac{n}{f - n}\)</p>
+
+<p>Putting this into a matrix gives \(P_{ortho,VK} = \begin{bmatrix}
+    \frac{2}{r - l} &amp; 0 &amp; 0 &amp; -\frac{r+l}{r-l} \\ 
+    0 &amp; \frac{2}{b - t} &amp; 0 &amp; -\frac{t+b}{b-t} \\ 
+    0 &amp; 0 &amp; \frac{1}{f - n} &amp; -\frac{n}{f-n} \\ 
+    0 &amp; 0 &amp; 0 &amp; 1\\ 
+\end{bmatrix} * T_{VK} = \begin{bmatrix}
+    \frac{2}{r - l} &amp; 0 &amp; 0 &amp; -\frac{r+l}{r-l} \\ 
+    0 &amp; \frac{2}{b - t} &amp; 0 &amp; -\frac{t+b}{b-t} \\ 
+    0 &amp; 0 &amp; \frac{1}{f - n} &amp; -\frac{n}{f-n} \\ 
+    0 &amp; 0 &amp; 0 &amp; 1\\ 
+\end{bmatrix} * 
+    \begin{bmatrix}
+    1 &amp; 0 &amp; 0 &amp; 0\\ 
+    0 &amp; -1 &amp; 0 &amp; 0\\ 
+    0 &amp; 0 &amp; -1 &amp; 0\\ 
+    0 &amp; 0 &amp; 0 &amp; 1\\ 
+    \end{bmatrix}
+    \\ 
+    = \begin{bmatrix}
+    \frac{2}{r - l} &amp; 0 &amp; 0 &amp; -\frac{r+l}{r-l} \\ 
+    0 &amp; -\frac{2}{b - t} &amp; 0 &amp; -\frac{t+b}{b-t} \\ 
+    0 &amp; 0 &amp; -\frac{1}{f - n} &amp; -\frac{n}{f-n} \\ 
+    0 &amp; 0 &amp; 0 &amp; 1\\ 
+\end{bmatrix}\)</p>
+
+<hr class="sec_sep" />
+
+<h2 id="perspective-projection">Perspective projection</h2>
+
+<p>The perspective matrix is applied before a orthographic projection matrix.
+Normally, people just combine these two matrices into one.</p>
+
+<p>Separating the perspective matrix out as first is useful (at least conceptually), because it’s the same between OpenGL
+and Vulkan.</p>
+
+<p>We want to map the viewing frustrum to a cube with extents \([l,r] \times [b,t] \times [n,f]\)</p>
+
+<p>In each case we have \(x' = \frac{n x}{z}, y' = \frac{n y}{z}\).
+This division by \(z\) is a bit of problem since we can’t represent that in a matrix transformation.</p>
+
+<p>But both OpenGL and Vulkan perform the <strong>perspective-divide</strong> \((x',y',z',w') \to (\frac{x'}{w'},\frac{y'}{w'},\frac{z'}{w'})\) after the transformations have been applied so the division can happen automatically for us.</p>
+
+<p>We can instead update \(x' = nx,y' = nx\), pretty simple.</p>
+
+<p>As for \(z'\), we would keep \(z' = z\), since we want to store depth information.
+But we know the perspective-divide is ultimately going to happen after our transformation.</p>
+
+<p>The question then is, for what constants \(a,b\) can we have:
+\(\frac{az + b}{z} = z\) or \(az + b = z^2\).</p>
+
+<p>Applying the near and far plane constraints gives \(an + b = n^2\) and \(af + b = f^2\).
+Solving gives \(a = n + f,b = -nf\).</p>
+
+<p>Finally, sticking this all into a matrix we get
+\(P_{persp} =\begin{bmatrix}
+    n &amp; 0 &amp; 0 &amp; 0\\ 
+    0 &amp; n &amp; 0 &amp; 0\\ 
+    0 &amp; 0 &amp; n+f &amp; -nf\\ 
+    0 &amp; 0 &amp; 1 &amp; 0\\ 
+\end{bmatrix}\)</p>
+
+<p><em>For OpenGL</em></p>
+
+<p>we have the following final perspective projection matrix
+\(P_{persp,GL} = \begin{bmatrix}
+    \frac{2}{r - l} &amp; 0 &amp; 0 &amp; -\frac{r+l}{r-l} \\ 
+    0 &amp; \frac{2}{t - b} &amp; 0 &amp; -\frac{t+b}{t-b} \\ 
+    0 &amp; 0 &amp; \frac{2}{f - n} &amp; -\frac{n+f}{f-n} \\ 
+    0 &amp; 0 &amp; 0 &amp; 1\\ 
+\end{bmatrix} * \begin{bmatrix}
+    n &amp; 0 &amp; 0 &amp; 0\\ 
+    0 &amp; n &amp; 0 &amp; 0\\ 
+    0 &amp; 0 &amp; n+f &amp; -nf\\ 
+    0 &amp; 0 &amp; 1 &amp; 0\\ 
+\end{bmatrix} * \begin{bmatrix}
+    1 &amp; 0 &amp; 0 &amp; 0\\ 
+    0 &amp; 1 &amp; 0 &amp; 0\\ 
+    0 &amp; 0 &amp; -1 &amp; 0\\ 
+    0 &amp; 0 &amp; 0 &amp; 1\\ 
+\end{bmatrix} \\
+= \begin{bmatrix}
+    \frac{2n}{r - l} &amp; 0 &amp; \frac{r+l}{r-l} &amp; 0 \\ 
+    0 &amp; \frac{2n}{t - b} &amp; \frac{t+b}{t-b} &amp; 0 \\ 
+    0 &amp; 0 &amp; -\frac{n+f}{f -n} &amp; -\frac{2nf}{f-n} \\ 
+    0 &amp; 0 &amp; -1 &amp; 0\\ 
+\end{bmatrix}\)</p>
+
+<p><em>And for Vulkan</em></p>
+
+\[P_{persp,VK} = \begin{bmatrix}
+    \frac{2}{r - l} &amp; 0 &amp; 0 &amp; -\frac{r+l}{r-l} \\ 
+    0 &amp; \frac{2}{b - t} &amp; 0 &amp; -\frac{t+b}{b-t} \\ 
+    0 &amp; 0 &amp; \frac{1}{f - n} &amp; -\frac{n}{f-n} \\ 
+    0 &amp; 0 &amp; 0 &amp; 1\\ 
+\end{bmatrix} * \begin{bmatrix}
+    n &amp; 0 &amp; 0 &amp; 0\\ 
+    0 &amp; n &amp; 0 &amp; 0\\ 
+    0 &amp; 0 &amp; n+f &amp; -nf\\ 
+    0 &amp; 0 &amp; 1 &amp; 0\\ 
+\end{bmatrix} * \begin{bmatrix}
+    1 &amp; 0 &amp; 0 &amp; 0\\ 
+    0 &amp; -1 &amp; 0 &amp; 0\\ 
+    0 &amp; 0 &amp; -1 &amp; 0\\ 
+    0 &amp; 0 &amp; 0 &amp; 1\\ 
+\end{bmatrix} \\
+= \begin{bmatrix}
+    \frac{2n}{r - l} &amp; 0 &amp; \frac{r+l}{r-l} &amp; 0 \\ 
+    0 &amp; -\frac{2n}{b - t} &amp; \frac{t+b}{b-t} &amp; 0 \\ 
+    0 &amp; 0 &amp; -\frac{f}{f -n} &amp; -\frac{nf}{f-n} \\ 
+    0 &amp; 0 &amp; -1 &amp; 0\\ 
+\end{bmatrix}\]
+
+<hr class="sec_sep" />
+
+<h2 id="summary">Summary</h2>
+
+<p>The OpenGL projection matrices are:</p>
+
+\[P_{ortho,GL} = \begin{bmatrix}
+    \frac{2}{r - l} &amp; 0 &amp; 0 &amp; -\frac{r+l}{r-l} \\ 
+    0 &amp; \frac{2}{t - b} &amp; 0 &amp; -\frac{t+b}{t-b} \\ 
+    0 &amp; 0 &amp; \frac{-2}{f - n} &amp; -\frac{n+f}{f-n} \\ 
+    0 &amp; 0 &amp; 0 &amp; 1 \end{bmatrix}\]
+
+\[P_{persp,GL} = \begin{bmatrix}
+    \frac{2n}{r - l} &amp; 0 &amp; \frac{r+l}{r-l} &amp; 0 \\ 
+    0 &amp; \frac{2n}{t - b} &amp; \frac{t+b}{t-b} &amp; 0 \\ 
+    0 &amp; 0 &amp; -\frac{n+f}{f -n} &amp; -\frac{2nf}{f-n} \\ 
+    0 &amp; 0 &amp; -1 &amp; 0\\ 
+\end{bmatrix}\]
+
+<p>The Vulkan projection matrices are:</p>
+
+\[P_{ortho,VK} = \begin{bmatrix}
+    \frac{2}{r - l} &amp; 0 &amp; 0 &amp; -\frac{r+l}{r-l} \\ 
+    0 &amp; -\frac{2}{b - t} &amp; 0 &amp; -\frac{t+b}{b-t} \\ 
+    0 &amp; 0 &amp; -\frac{1}{f - n} &amp; -\frac{n}{f-n} \\ 
+    0 &amp; 0 &amp; 0 &amp; 1\\ 
+\end{bmatrix}\]
+
+\[P_{persp,VK} = \begin{bmatrix}
+    \frac{2n}{r - l} &amp; 0 &amp; \frac{r+l}{r-l} &amp; 0 \\ 
+    0 &amp; -\frac{2n}{b - t} &amp; \frac{t+b}{b-t} &amp; 0 \\ 
+    0 &amp; 0 &amp; -\frac{f}{f -n} &amp; -\frac{nf}{f-n} \\ 
+    0 &amp; 0 &amp; -1 &amp; 0\\ 
+\end{bmatrix}\]
+
+</article>
+    </div>
+  </main>
+</body>
+</html>

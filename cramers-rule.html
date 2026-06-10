@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Cramers Rule</title>
+  <link rel="shortcut icon" href="/logo.png">
+  <link rel="stylesheet" href="/style.css">
+  <script type="text/javascript" async
+    src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+    MathJax.Hub.Config({
+      tex2jax: {
+        inlineMath: [['$','$'], ['\\(','\\)']],
+        processEscapes: true
+      }
+    });
+  </script>
+</head>
+<body a="light">
+  <main class="page-content">
+    <div class="w">
+      <a href="/">..</a><article>
+  <p class="post-meta">
+    <time datetime="2026-01-24 00:00:00 -0500">2026-01-24</time>
+  </p>
+  
+  <h1>Cramers Rule</h1>
+
+  
+<p>Say you want to solve a linear system \(A \bf{x} = b\) where \(A\) is an \(m \times n\) matrix with entries in \(\mathbb{R}\), where we assume the solution exists and is unique (so \(det[A] \neq 0\)).</p>
+
+<p>Here’s one way to do it with a little trick from Cramer.
+Let the $n$ columns of \(A\) be written as \(\bf{a_i}\) which are each \(m \times 1\) vectors.</p>
+
+<p>For each column of \(A\) define a new \(n \times n\) matrix \(I_i(x) = [\bf{e_1} \ldots \bf{x} \ldots \bf{e_n}]\) where \(\bf{x}\) is in column \(i\).
+If we define \(A_i(x)\) to the matrix \(A\) but with column \(i\) replace with \(\bf{b}\), then we get</p>
+
+\[A I_i(x) = A_i(x)\]
+
+<p>From properties of determinants we then have</p>
+
+\[det [A_i(x)] = det[A]det[I_i(x)]\]
+
+<p>Repeatedly applying row reduction to the rows of \(I_i(x)\) results in</p>
+
+\[det(I_i(x)) = x_i\]
+
+<p>so we ultimately get</p>
+
+\[x_i = \frac{det[A_i(x)]}{det[A]}\]
+
+
+</article>
+    </div>
+  </main>
+</body>
+</html>

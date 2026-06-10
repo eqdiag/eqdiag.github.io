@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Hand Of Darkness</title>
+  <link rel="shortcut icon" href="/logo.png">
+  <link rel="stylesheet" href="/style.css">
+  <script type="text/javascript" async
+    src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+    MathJax.Hub.Config({
+      tex2jax: {
+        inlineMath: [['$','$'], ['\\(','\\)']],
+        processEscapes: true
+      }
+    });
+  </script>
+</head>
+<body a="light">
+  <main class="page-content">
+    <div class="w">
+      <a href="/">..</a><article>
+  <p class="post-meta">
+    <time datetime="2026-02-07 00:00:00 -0500">2026-02-07</time>
+  </p>
+  
+  <h1>Hand Of Darkness</h1>
+
+  
+<p>Recently, a close friend of mine was reading the <em>The Left Hand of Darkness</em>.
+I haven’t read the book but from what I know, there’s some kind of matching/mating ritual that takes place between people in this society according to a predetermined set of rules.</p>
+
+<p>Anyways, we were interested in some questions related to the matching process and while thinking about it, inevitably more questions emerged.</p>
+
+<p>Here’s the motivating question:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Given 150 people who have a "special period" lasting 2 days that occurs every 26 days, how close to always will it be the case that at least 2 of the 150 people are have the same "special period" at the same time?
+</code></pre></div></div>
+
+<p>To me, there are some implicit assumptions here that need to be teased out to propery frame the problem, and also some simplifications that make it a bit easier to reason about.</p>
+
+<h2 id="problem">Problem</h2>
+
+<p>Here’s a first stab at modeling the problem:</p>
+<ol>
+  <li>Initially, each person is uniformly assigned an “event” that occurs on a day from 1-26 that lasts exactly one day</li>
+  <li>After that, each person’s event occurs exactly 26 days after the first occurence, indefinitely</li>
+</ol>
+
+<p>After talking more about the problem, we figured the more interesting questions were about understanding when the system fails, or when the matching algorithm ends up leaving people alone.</p>
+
+<p>This naturally leads to several questions:</p>
+<ol>
+  <li>What’s the chance of at least one singleton? (some day in 1-26 with exactly 1 person)</li>
+  <li>How does this fluctuate with the number of people + the number of days?</li>
+</ol>
+
+<h2 id="analysis">Analysis</h2>
+
+<p>Let’s answer question (1).
+If some person is alone on a day, call it day \(i \in \{1,...,26\}\), then we want to count all ways this can happen.
+For a fixed day \(i\) then, we want to count the ways to assign \(149\) people to \(25\) remaining days, that’s</p>
+
+\[25^{149}\]
+
+<p>There are \(26\) ways to choose the single person, so ultimately the probability of this is</p>
+
+\[26 * \frac{25^{149}}{26^{150}}\]
+
+<p>Let’s generalize.
+Say we have \(n\) people and \(k\) days.
+Then let \(X_1=\)“At least one person is not matched”</p>
+
+\[Pr(X_1) = k * \frac{(k-1)^{(n-1)}}{k^n} = (\frac{k-1}{k})^{n-1}\]
+
+<p>This can be pushed a bit further as well.
+Then let \(X_j=\)“At least j people are not matched”, where of course \(j\) can’t exceed \(k-1\).</p>
+
+<p>Warming up a bit, let’s try \(Pr(X_2)\).
+The same procedure works, find all ways to place the first \(j\) people alone, then count the ways to assign the remaining people to the leftover slots.</p>
+
+<p>So</p>
+
+\[Pr(X_2) = \binom{k}{2} \frac{(k-2)^{n-2}}{k^n} = \frac{k!}{(k-2)!2!} * \frac{(k-2)^{n-2}}{k^n} \\
+    = \frac{1}{2!} * \frac{k(k-1)}{k*k} * (\frac{k-2}{k})^{n-2}\]
+
+<p>Generally</p>
+
+\[Pr(X_j) = \binom{k}{j} \frac{(k-j)^{n-j}}{k^n}\]
+
+<p>TODO: Compute approximation for general probabilty using stirling’s formula?</p>
+
+<p>TODO: Add some code here for simulating stuff related to</p>
+
+</article>
+    </div>
+  </main>
+</body>
+</html>
